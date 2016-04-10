@@ -11,6 +11,7 @@
       <directory>${project.basedir}</directory>
       <includes>
         <include>appspec.yml</include>
+        <include>appspec.dev.yml</include>
         <include>html/*</include>
         <include>scripts/*</include>
         
