@@ -28,11 +28,84 @@
 				</configuration>
 				<executions>
 					<execution>
-						<id>make-assembly</id> <!-- this is used for inheritance merges -->
-						<phase>package</phase> <!-- append to the packaging phase. -->
+						<id>make-assembly</id>
+						<phase>package</phase>
 						<goals>
-							<goal>single</goal> <!-- goals == mojos -->
+							<goal>single</goal>
 						</goals>
+						<configuration>
+							<tasks>
+								<echo>copying the yaml file</echo>
+								<copy file="appspec.yml" tofile="${basedir}/target/appspec.yml" />
+								<copy file="appspec.dev.yml" tofile="${basedir}/target/appspec.dev.yml" />
+							</tasks>
+						</configuration>
+
+					</execution>
+
+
+				</executions>
+
+
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<!-- here the phase you need -->
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+
+							<outputDirectory>${basedir}/target/final</outputDirectory>
+							<resources>
+								<resource>
+
+
+
+									<directory>${basedir}/target</directory>
+									<includes>
+										<include>testproject.war</include>
+									</includes>
+								</resource>
+								<resource>
+									<directory>${basedir}/yml</directory>
+									<includes>
+										<include>appspec.yml</include>
+									</includes>
+								</resource>
+								<resource>
+									<directory>${basedir}/yml</directory>
+									<includes>
+										<include>appspec.dev.yml</include>
+									</includes>
+								</resource>
+								
+								<resource>
+									<directory>${basedir}</directory>
+									<includes>
+										<include>html/*</include>
+									</includes>
+								</resource>
+								
+								<resource>
+									<directory>${basedir}</directory>
+									<includes>
+										<include>scripts/*</include>
+									</includes>
+								</resource>
+
+							</resources>
+
+							
+						</configuration>
+
+
 					</execution>
 				</executions>
 			</plugin>
