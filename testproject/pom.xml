@@ -43,9 +43,6 @@
 							<outputDirectory>${basedir}/target/final</outputDirectory>
 							<resources>
 								<resource>
-
-
-
 									<directory>${basedir}/target</directory>
 									<includes>
 										<include>testproject.war</include>
@@ -86,33 +83,7 @@
 
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>com.googlecode.maven-java-formatter-plugin</groupId>
-				<artifactId>maven-java-formatter-plugin</artifactId>
-				<version>0.3.1</version>
-				<configuration>
-					<lineEnding>CRLF</lineEnding>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.0.0</version>
-				<configuration>
-					<filesets>
-						<fileset>
-							<directory>target/final</directory>
-							<includes>
-								<include>html/**</include>
-								<include>scripts/**</include>
-							</includes>
-							<followSymlinks>false</followSymlinks>
-						</fileset>
-					</filesets>
-				</configuration>
-			</plugin>
-
+			</plugin>			
 		</plugins>
 
 
