@@ -34,11 +34,7 @@
 							<goal>single</goal>
 						</goals>
 						<configuration>
-							<tasks>
-								<echo>copying the yaml file</echo>
-								<copy file="appspec.yml" tofile="${basedir}/target/appspec.yml" />
-								<copy file="appspec.dev.yml" tofile="${basedir}/target/appspec.dev.yml" />
-							</tasks>
+							
 						</configuration>
 
 					</execution>
@@ -60,7 +56,10 @@
 						<goals>
 							<goal>copy-resources</goal>
 						</goals>
+
 						<configuration>
+
+
 
 							<outputDirectory>${basedir}/target/final</outputDirectory>
 							<resources>
@@ -85,14 +84,14 @@
 										<include>appspec.dev.yml</include>
 									</includes>
 								</resource>
-								
+
 								<resource>
 									<directory>${basedir}</directory>
 									<includes>
 										<include>html/*</include>
 									</includes>
 								</resource>
-								
+
 								<resource>
 									<directory>${basedir}</directory>
 									<includes>
@@ -102,12 +101,31 @@
 
 							</resources>
 
-							
+
 						</configuration>
 
 
 					</execution>
 				</executions>
+			</plugin>
+
+
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<filesets>
+								<fileset>
+									<directory>target/final</directory>
+
+<includes>
+            <include>**</include>
+            <include>**</include>
+          </includes>
+									<followSymlinks>false</followSymlinks>
+								</fileset>
+					</filesets>
+				</configuration>
 			</plugin>
 
 		</plugins>
