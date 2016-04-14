@@ -43,7 +43,7 @@
 							<outputDirectory>${basedir}/target/final</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${basedir}/target</directory>
+									<directory>${project.build.directory}</directory>
 									<includes>
 										<include>testproject.war</include>
 									</includes>
