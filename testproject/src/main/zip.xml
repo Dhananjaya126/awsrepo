@@ -31,14 +31,14 @@
 			</includes>
 			<useDefaultExcludes>true</useDefaultExcludes>
 		</fileSet>
-<!-- 
+
 		<fileSet>
 			<directory>${project.basedir}/scripts</directory>
-			<outputDirectory>${project.build.directory}/target/final</outputDirectory>
+			<outputDirectory>/</outputDirectory>
 			<includes>
 				<include>start_server.sh</include>
 			</includes>
 			<lineEnding>unix</lineEnding>
-		</fileSet> -->
+		</fileSet> 
 	</fileSets>
 </assembly>
