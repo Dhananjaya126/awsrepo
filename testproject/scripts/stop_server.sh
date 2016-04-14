@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Stop web server
 httpd_running=`pgrep httpd`
 if [[ -n  $httpd_running ]]; then
