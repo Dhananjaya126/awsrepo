@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /html
-    destination: /var/www/html
+  - source: testproject.war
+    destination: /var/lib/tomcat8/webapps
 hooks:
   BeforeInstall:   
     - location: scripts/stop_server.sh
