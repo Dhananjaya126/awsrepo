@@ -42,12 +42,7 @@
 
 							<outputDirectory>${basedir}/target/final</outputDirectory>
 							<resources>
-								<resource>
-									<directory>${project.build.directory}</directory>
-									<includes>
-										<include>testproject.war</include>
-									</includes>
-								</resource>
+
 								<resource>
 									<directory>${basedir}/yml</directory>
 									<includes>
@@ -74,7 +69,12 @@
 										<include>scripts/*</include>
 									</includes>
 								</resource>
-
+								<resource>
+									<directory>${basedir}/target</directory>
+									<includes>
+										<include>*.war</include>
+									</includes>
+								</resource>
 							</resources>
 
 
@@ -83,7 +83,7 @@
 
 					</execution>
 				</executions>
-			</plugin>			
+			</plugin>
 		</plugins>
 
 
